@@ -346,8 +346,8 @@
     async function submitWaitlist(email) {
       try {
         await fetch('https://app.loops.so/api/newsletter-form/cml1cvnea11fz0izdla5dojcr', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, userGroup: 'joinotis', source: refSource })
+          method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ email, userGroup: 'joinotis', source: refSource }).toString()
         });
       } catch (_) {}
     }
